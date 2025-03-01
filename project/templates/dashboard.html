@@ -1,0 +1,28 @@
+<!-- dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>Welcome, {{ session['username'] }}!</h1>
+
+    <p>Your Available Credits: <strong>{{ session.get('credits', 0) }}</strong></p>
+
+    <!-- Request More Credits Form -->
+    <form action="{{ url_for('request_credits') }}" method="POST">
+        <button type="submit">Request More Credits</button>
+    </form>
+
+    <br>
+
+    <a href="{{ url_for('scan_document') }}">Go to Scan Page</a>
+    <br>
+    <a href="{{ url_for('logout') }}">Logout</a>
+
+</body>
+</html>

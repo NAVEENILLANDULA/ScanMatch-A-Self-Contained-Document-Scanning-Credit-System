@@ -1,0 +1,5 @@
+Recent Innovations in AI
+
+Artificial Intelligence has seen rapid advancements in recent years. 
+New models like GPT-4 and Gemini are improving text generation, 
+while computer vision is enhancing image recognition.

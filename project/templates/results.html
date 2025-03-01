@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Scan Results for "{{ filename }}"</h2>
+{% if matches %}
+    <h3>Matching Documents:</h3>
+    <ul>
+        {% for match in matches %}
+            <li>{{ match[0] }} ({{ match[1] * 100 | round(2) }}% similar)</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No similar documents found.</p>
+{% endif %}
+<a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+{% endblock %}
